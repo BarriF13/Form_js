@@ -19,6 +19,7 @@ form.register.addEventListener("submit", checkform);
 form.pass1.addEventListener("keypress", nospace);
 form.pass2.addEventListener("keypress", nospace);
 form.pass1.addEventListener("keyup", passwordstrength);
+form.pass2.addEventListener("keyup", passMatch);
 
 
 
@@ -69,4 +70,13 @@ function passwordstrength(e){
   form.strength.textContent = strText[s];
   form.strength.style.color = strColor[s];
 
+}
+function passMatch(){
+    var pmatch1 = form.pass1.value
+    var pmatch2 = form.pass2.value
+    if (pmatch1 == pmatch2){
+      alert("matched");
+    } else{
+      alert("Your passwords do not match!!!");
+    }
 }
