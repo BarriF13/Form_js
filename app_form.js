@@ -14,8 +14,18 @@ var form ={
 };
 //now we are giving an event
 form.register.addEventListener("submit", checkform);
+//checking the email format//setting up RegEx
+var reemail=/^[a-z0-9]+@[a-z]+\.+[a-z]{2,4}$/;//"test1234@gmail.com"
 
 function checkform(e){
-  alert("it is working");
+  //alert(form.email.value);//getting the input email
+
+  if(!reemail.test(form.email.value)){
+
+    alert('This is not a correct email address')
+  }
+  else {
+    alert('Your email is accepted')
+  }
   e.preventDefault();
 }
