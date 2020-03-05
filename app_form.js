@@ -11,6 +11,7 @@ var form ={
   email: document.getElementById("email"),
   pass1: document.getElementById("pass1"),
   pass2: document.getElementById("pass2"),
+  strength: document.getElementById("strength")
 };
 
 //now we are giving an event
@@ -44,7 +45,28 @@ function nospace(e){
   }
 }
 
+var strText = ['weak', 'average', 'strong'];
+var strColor = ['#cc0','#f00','#080']
+
 function passwordstrength(e){
   var pass = form.pass1.value;
-  alert(pass);
+  // alert(pass);
+  //setting up uppercase Regex
+  var uc = pass.match(/[A-Z]/g);
+  uc = (uc&&uc.length || 0);
+
+  var nm= pass.match(/\d/g);
+  nm=(nm&&nm.length || 0);
+
+  var nw = pass.match(/W/g);
+  nw = (nw&&nw.length || 0);
+
+  var s=pass.length+uc+(nm*2)+(nw*3);
+  s = Math.min(Math.floor(s/10),2);//s is now my password strength
+
+  //now setting up the color and text for password strength
+
+  form.strength.textContent = strText[s];
+  form.strength.style.color = strColor[s];
+
 }
