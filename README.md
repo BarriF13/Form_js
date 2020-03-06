@@ -1,5 +1,6 @@
 # Form_js
 ----------Making a simple form--------
+#
 1- It has email input
 2- It has password and confirm password input option
 3- It can see if your password strenght is weak , average or strong
