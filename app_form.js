@@ -11,7 +11,7 @@ var form ={
   email: document.getElementById("email"),
   pass1: document.getElementById("pass1"),
   pass2: document.getElementById("pass2"),
-  strength: document.getElementById("strength")
+  strength: document.getElementById("strength"),
 };
 
 //now we are giving an event
@@ -75,8 +75,9 @@ function passMatch(){
     var pmatch1 = form.pass1.value
     var pmatch2 = form.pass2.value
     if (pmatch1 == pmatch2){
-      alert("matched");
-    } else{
-      alert("Your passwords do not match!!!");
+      document.getElementById("passMatcher").innerHTML="Matched :)";
+    }
+     else{
+      document.getElementById("passMatcher").innerHTML="Not matched :(";
     }
 }
