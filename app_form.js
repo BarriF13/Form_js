@@ -6,7 +6,7 @@
 //   return false;
 // }
 //selecting the form --
-var form ={
+var form = {
   register: document.getElementById("register"),
   email: document.getElementById("email"),
   pass1: document.getElementById("pass1"),
@@ -15,55 +15,49 @@ var form ={
 };
 
 //now we are giving an event
-form.register.addEventListener("submit", checkform);
-form.pass1.addEventListener("keypress", nospace);
-form.pass2.addEventListener("keypress", nospace);
-form.pass1.addEventListener("keyup", passwordstrength);
+form.register.addEventListener("submit", checkForm);
+form.pass1.addEventListener("keypress", noSpace);
+form.pass2.addEventListener("keypress", noSpace);
+form.pass1.addEventListener("keyup", passwordStrength);
 form.pass2.addEventListener("keyup", passMatch);
 
 
 
 //checking the email format//setting up RegEx
-var reemail=/^[a-z0-9]+@[a-z]+\.+[a-z]{2,4}$/;//"test1234@gmail.com"
+var reEmail = /^[a-z0-9]+@[a-z]+\.+[a-z]{2,4}$/;//"test1234@gmail.com"
 
-function checkform(e){
-  //alert(form.email.value);//getting the input email
-  //evaluate email form
+function checkForm(e) {
 
-  var msg ="";
-  if(!reemail.test(form.email.value)){
 
-    msg+="Your email";
-  }
-  e.preventDefault();
+document.getElementById('thanks').textContent = 'Thank you for checking out my little app'; e.preventDefault();
 }
-
-function nospace(e){
-  //space charcode is 32
-  //alert(e.charCode);
-  if (e.charCode == 32){
+function noSpace(e) {
+ 
+  if (e.charCode == 32) {
     e.preventDefault();
   }
+
 }
 
-var strText = ['weak', 'average', 'strong'];
-var strColor = ['#cc0','#f00','#080']
 
-function passwordstrength(e){
+var strText = ['weak', 'average', 'strong'];
+var strColor = ['#cc0', '#f00', '#080']
+
+function passwordStrength(e) {
   var pass = form.pass1.value;
   // alert(pass);
   //setting up uppercase Regex
   var uc = pass.match(/[A-Z]/g);
-  uc = (uc&&uc.length || 0);
+  uc = (uc && uc.length || 0);
 
-  var nm= pass.match(/\d/g);
-  nm=(nm&&nm.length || 0);
+  var nm = pass.match(/\d/g);
+  nm = (nm && nm.length || 0);
 
   var nw = pass.match(/W/g);
-  nw = (nw&&nw.length || 0);
+  nw = (nw && nw.length || 0);
 
-  var s=pass.length+uc+(nm*2)+(nw*3);
-  s = Math.min(Math.floor(s/10),2);//s is now my password strength
+  var s = pass.length + uc + (nm * 2) + (nw * 3);
+  s = Math.min(Math.floor(s / 10), 2);//s is now my password strength
 
   //now setting up the color and text for password strength
 
@@ -71,13 +65,13 @@ function passwordstrength(e){
   form.strength.style.color = strColor[s];
 
 }
-function passMatch(){
-    var pmatch1 = form.pass1.value
-    var pmatch2 = form.pass2.value
-    if (pmatch1 == pmatch2){
-      document.getElementById("passMatcher").innerHTML="Matched :)";
-    }
-     else{
-      document.getElementById("passMatcher").innerHTML="Not matched :(";
-    }
+function passMatch() {
+  var pmatch1 = form.pass1.value
+  var pmatch2 = form.pass2.value
+  if (pmatch1 == pmatch2) {
+    document.getElementById("passMatcher").innerHTML = "Matched :)";
+  }
+  else {
+    document.getElementById("passMatcher").innerHTML = "Not matched :(";
+  }
 }

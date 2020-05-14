@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>form events</title>
 </head>
+
 <body>
   <div id="container">
-  <form action="register" id="register">
-    <h2>Login form</h2>
-    <p>
-      <input type="text" placeholder="EMAIL" id="email">
-    </p>
-    <p></p>
-    <input type="password" placeholder="PASSWORD" id="pass1"><span id="strength"></span>
-    <p>
-      <input type="password" placeholder="CONFIRM-PASSWORD" id="pass2">
-    </p>
-    <p>
-      <input type="submit" value="REGISTER">
-    </p>
-    <div id="passMatcher"></div>
+    <form action="register" id="register">
+      <h2>Login form</h2>
+      <p><input type="email" placeholder="EMAIL" id="email">
+      </p>
+      <input type="password" placeholder="PASSWORD" id="pass1"><span id="strength"></span>
+      <p>
+        <input type="password" placeholder="CONFIRM-PASSWORD" id="pass2">
+      </p>
+      <p>
+        <input type="submit" value="REGISTER">
+      </p>
+      <div id="passMatcher"></div>
+      <div id="thanks"></div>
 
-
-  </form>
-</div>
+    </form>
+  </div>
 
   <script text="text/javascript" src="app_form.js"></script>
 </body>
+
 </html>
