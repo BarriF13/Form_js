@@ -29,7 +29,7 @@ var reEmail = /^[a-z0-9]+@[a-z]+\.+[a-z]{2,4}$/;//"test1234@gmail.com"
 function checkForm(e) {
 
 
-document.getElementById('thanks').textContent = 'Thank you for checking out my little app'; e.preventDefault();
+document.getElementById('thanks').innerHTML = 'Thank you for checking out my little app, please my website for more: <a href="https://bdesignstudio.co.uk/">b design studio</a>'; e.preventDefault();
 }
 function noSpace(e) {
  
